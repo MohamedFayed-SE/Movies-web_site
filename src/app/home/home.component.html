@@ -1,0 +1,95 @@
+
+
+<app-homecarousel [trendingMovies]='trendingMovies'></app-homecarousel>
+
+<!------------Search Input
+    <div class="search my-5 col-md-12  ">
+    <input type="text" class="form-control w-75 m-auto bg-transparent text-white" placeholder="Search.....">
+</div>
+    --------->
+
+<!------------Trending Movies-------->
+<section class="my-5"  >
+    <div class="container col-md-11">
+        
+        <div class="row py-3">
+            <!-------------Title of Trending Movies--------->
+            <div class="col-md-4">
+                <div class="trending-title py-5">
+                   
+                    <div class="line w-50 my-3"></div>
+                    <h2>Trending </h2>
+                    <h2>MOvies</h2>
+                    <h2>TO Watch Now</h2>
+                    <span class="text-muted">Most watched movies by days</span>
+                    <div class="line my-2"></div>
+                </div>
+               
+            </div>
+    
+            <!------------------------Display Trending Movies------------------->
+            <div class="col-md-2" *ngFor='let movie of trendingMovies|search:searchValue'>
+                <a routerLink='/details/{{movie.media_type}}/{{movie.id}}' class="details" >
+                    <div class="movie p-1">
+                        <div class="img border shadow-lg">
+                           
+                            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="{{movie.title}}{{movie.name}}" class="w-100">
+                           
+                            <div class="vote-container">
+                                <div class="vote">
+                                    <h6>{{movie.vote_average}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="title d-flex justify-content-center py-1">
+                            <h4 class="py-3 ">{{movie.title}}</h4>
+                        </div>
+                       
+                    </div>
+                </a>
+               
+            </div>
+        </div>
+    </div>
+    
+</section>
+<!------------Trending Movies-------->
+<section class="my-5" >
+    <div class="container col-md-11">
+        <div class="row py-3">
+            <!-------------Title of Trending Tvshow------------>
+               <div class="col-md-4 ">
+                   <div class="trending-title py-5">
+                       <div class="line w-50 my-3"></div>
+                       <h2>Trending </h2>
+                       <h2>Tv Show</h2>
+                       <h2>TO Watch Now</h2>
+                       <span class="text-muted">Most watched movies by days</span>
+                       <div class="line my-2"></div>
+                   </div>
+                  
+               </div>
+              <!------------------------Display Trending Tv Show------------------->
+               <div class="col-md-2" *ngFor='let tv of trendingTVShows|search:searchValue'>
+                   <a routerLink='/details/{{tv.media_type}}/{{tv.id}}' class="details" >
+                       <div class="tv p-2">
+                           <div class="img border shadow-lg">
+                               <img src="https://image.tmdb.org/t/p/w500/{{tv.poster_path}}" alt="{{tv.name}}" class="w-100">
+                               <div class="vote-container">
+                                   <div class="vote">
+                                       <h6>{{tv.vote_average}}</h6>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="title d-flex justify-content-center py-1">
+                               <h4 class="py-3 ">{{tv.name}}</h4>
+                           </div>
+                          
+                       </div>
+                   </a>
+                  
+               </div>
+           </div>
+    </div>
+    
+</section>

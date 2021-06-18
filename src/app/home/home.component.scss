@@ -1,0 +1,59 @@
+.trending-title
+{
+    color: white;
+    .line
+    {
+        height: 1px;
+        background-color:  gray;
+        
+    }
+    
+}
+.details
+{
+    
+    text-decoration: none;
+    color: white;
+    .title h4
+    {   
+    font-weight: 600;
+    transition: 1s color;
+    }
+    &:hover
+    {
+        .title h4
+        {
+            color: #09c;
+        }
+    }
+    .heart{
+        z-index: 555555 !important;
+    }
+    
+    .img
+    {
+    position: relative;
+    .vote-container
+    {
+        width: 33px;
+        height: 38px;
+        position: absolute;
+        top: -3px;
+        right: 2px;
+        background-color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .vote h6
+        {
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+    }
+   
+}
+    
+
+}

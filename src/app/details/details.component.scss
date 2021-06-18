@@ -1,0 +1,27 @@
+@import '../home/home.component.scss';
+
+.item-detail
+{
+
+    h2{font-weight: 600; font-size: 40px; }
+    
+    .descreption p
+    {
+        font-size: 23px;
+        span{font-weight: 600;}
+    }
+    .descreption h2,button{
+        
+        font-weight: 600;
+         
+    }
+    .overview{
+        font-size: 20px;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #09c;
+    }
+}
+.title{
+    cursor: pointer;
+}

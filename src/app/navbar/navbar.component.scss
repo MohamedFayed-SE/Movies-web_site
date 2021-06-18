@@ -1,0 +1,31 @@
+@import '../../styles.scss';
+
+.navbar
+{
+    background-color:#1B3649 !important;
+    font-weight: 600;
+    .navbar-brand{ color: white ; font-size: 25px;}
+    .navbar-nav
+    {
+        .active 
+        {
+             
+             border-bottom: 2px solid #09c;
+            a{color: white!important;}
+        }
+        .nav-item
+        {
+           
+            .nav-link
+            {
+                color:$secondFontColor;
+            }
+            i{
+                color: white !important;
+                transition:1s color;
+                &:hover{color: tomato !important;}
+            }
+        }
+       
+    }
+}

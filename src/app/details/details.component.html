@@ -1,0 +1,114 @@
+<!----------Detail of Movies and Tvs-------->
+<section class="container col-md-11" *ngIf='!isPerson()' >
+    <div class="row">
+
+        <div class="col-md-4 mt-5   rounded  shadow-lg">
+            <div class="poster-path">
+            <img src="https://image.tmdb.org/t/p/w500/{{details.poster_path}}" alt="photo of  {{details.title}}{{details.name}}" class="w-100 mb-5">
+            </div>
+        </div>
+        <section id="DetailsInfo" class="col-md-7 ">
+            <div class="m-2 item-detail" >
+                <!----- all Details inFormation of Movie Or TvShow-------->
+                <div class="info py-5 px-3 " > 
+                    <!-----------Descrption OF Detail item Iteam------------>
+                    <div class="descreption mb-3">
+                     <h2 class="my-2 pb-2">{{details.title}}{{details.name}} </h2>
+                     <h6 class="py-2">{{details.tagline}}</h6>
+                     <button class="btn btn-info mx-2 my-3" *ngFor=" let gener of details.genres">{{gener.name}}</button>
+                     
+                    <p class="py-1 medium-size"><span class="">Vote :</span> {{details.vote_average}}</p>
+                    <p class=" py-1"><span class="pr-1">Vote Count :</span> {{details.vote_count}}</p>
+                    <p class=" py-1"><span class="pr-1">Popularity :</span> {{details.popularity}}</p>
+                    <p class=" py-1"><span class="pr-1">Release Date :</span> {{details.release_date}} {{details.first_air_date}}</p>
+                    <!-------------------Special Data For Tvshow-------------------->
+                    <div class="tv-info" *ngIf='isTvshow()'>
+                        <p class=" py-1"><span class="pr-1">Number of episodes :</span> {{details.number_of_episodes}}</p>
+                        <p class=" py-1"><span class="pr-1">Number of Seasons :</span> {{details.number_of_seasons}}</p>
+                    </div>
+                   
+    
+                    </div> 
+                    <!----------Over View---------->
+                    <div class="overview py-5">
+                     <p class="">{{details.overview}}</p>
+                 </div>
+                </div>
+                
+             </div>
+        </section>
+       
+        
+    </div>
+    
+</section>
+ 
+<section *ngIf="isPerson()" class="py-5">
+    <div class="container col-md-11">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="">
+                    <img src="https://image.tmdb.org/t/p/w500/{{details[0].profile_path}} " alt="" class="w-100 rounded shadow-lg">
+                </div>
+         
+            </div>
+            <div class="col-md-5 item-detail">
+                <div class="descreption mb-3">
+                    <h2 class="my-2 py-2 text-info">{{details[0].name}}?</h2>
+                    <p class="py-1 medium-size"><span class="">Gender:</span> {{details[0].gender|gender}}</p>
+                    <p class=" py-1"><span class="pr-1">Popularity :</span> {{details[0].popularity}}</p>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+    <!-------------------All works of That Person -------------->
+    <div class="container col-md-11">
+        <div class="row mt-5">
+            <div class="col-md-3 py-2  "*ngFor="let detail of details[0].known_for">
+                
+               
+                    <div class="detail p-2 details">
+                        <div class="img">
+                            
+                            <div class="img-layer">
+                            </div>
+                            <img src="https://image.tmdb.org/t/p/w500/{{detail.poster_path}}" class="w-100 shadow-lg rounded" alt="photo of {{detail.title}} detail">
+                            <svg class="heart" viewBox="0 0 32 29.6" (click)="addToFavorites(detail,detail.media_type)" >
+                                <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                                  c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                              </svg> 
+                            
+                              <div class="detail-icon" (click)="reloadCurrentRoute(detail.media_type,detail.id)"  >
+                                <i class="fas fa-info-circle fa-2x"></i>
+                              </div>
+                                
+                    
+                            <div class="vote-container">
+                                <div class="vote">
+                                    <h6>{{detail.vote_average}}</h6>
+                                   
+                                </div> 
+                                     
+                            </div>
+                           
+          
+                        
+                        </div>
+                      
+                        <div class="title py-3 my-2 d-flex justify-content-center "(click)="reloadCurrentRoute(detail.media_type,detail.id)" >
+                            <h4>{{detail.title}} {{detail.name}}</h4>
+                            
+                        </div>
+                    </div>
+                
+               
+            </div>
+        </div>
+       
+    </div>
+   
+</section>
+    
+

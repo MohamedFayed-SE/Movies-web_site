@@ -1,0 +1,165 @@
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap');
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+body
+{
+    background-color:$bgColor;
+    color: $bgColor;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: $fontColor;
+    background-image: url('assets/imges/95489.jpg');
+    background-position: contain;
+    position: relative;
+    
+    
+    
+    
+}
+.layer{
+   
+    position:fixed;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: -1;
+
+}
+
+
+.details
+{
+    text-decoration: none !important;
+    color: white;
+    z-index: 0;
+    
+    &:hover
+    {
+        .title h4
+        {
+            color: #09c;
+        }
+        
+        
+    }
+    
+    .img
+    {
+    position: relative;
+    overflow: hidden;
+       
+    .heart {
+        fill: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 30px;
+        animation: pulse 1s ease infinite;
+        transition: 1s all;
+        z-index: 1111;
+        opacity: 0;
+        cursor: pointer;
+        &:hover
+        {
+            fill: red;
+        }
+      }
+      .detail-icon
+      {
+        position: absolute;
+        top: 100px;
+        right: 0;
+        transition: 1s all;
+        z-index: 1111;
+        color: yellow;
+        opacity: 0;
+        cursor: pointer;
+        transition: color opacity .5s;
+        &:hover{color: #24ef24;}
+        i{
+            font-size: 40px;
+        }
+       
+      }
+    
+      
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+      }
+      
+        
+    &:hover
+    {
+        .img-layer{opacity: .3;}
+        .heart{opacity: 1;}
+        .detail-icon{opacity: 1;}
+    }
+    .img-layer
+    {
+        position: absolute;
+        //background-image: radial-gradient(cyan 0%, transparent 70%, rgba(0,0,0,.6) 30%);
+        background: radial-gradient(circle at 100%, #eee 70%, #333 30%);
+             width: 100%;
+        height: 106%;
+        z-index: 1;
+        opacity:0;
+        transition: 1s all;
+        
+        
+
+    }
+    
+    &:hover img{
+            transform: scale(1.3);
+    }
+    img{transition: 1s all; position: relative;}
+
+    .vote-container
+    {
+        width: 33px;
+        height: 37px;
+        position: absolute;
+        top: -3px;
+        right: 2px;
+        border-radius: 3px;
+        background-color: #09c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 555;
+        
+        
+       
+        .vote h6
+        {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+           
+        }
+        
+        
+
+        
+
+    }
+   
+}
+    .title h4
+    {   
+    font-weight: 600;
+    transition: 1s color;
+    }
+   
+
+}
+

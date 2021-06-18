@@ -1,0 +1,18 @@
+.details
+{
+    text-decoration: none;
+    color: white;
+    .title h4
+    {   
+    font-weight: 600;
+    transition: 1s color;
+    }
+    &:hover
+    {
+        .title h4
+        {
+            color: #09c;
+        }
+    }
+
+}

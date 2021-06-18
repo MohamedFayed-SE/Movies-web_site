@@ -1,0 +1,23 @@
+
+<div class="container col-md-11 py-5">
+    <div class="row">
+        <div class="col-md-3 my-2" *ngFor="let person of persons|search:searchValue">
+            <a routerLink="/details/person/{{person.id}}" class="details">
+               
+                <div class="person  border">
+                    <div class="img">
+                        <div class="img-layer "></div>
+                        <img src="https://image.tmdb.org/t/p/w500/{{person.profile_path}}" alt="{{person.name}} photo" class="w-100 rounded shadow-lg">
+                       
+                    </div>
+                  
+                </div>
+                <div class="title py-3 d-flex justify-content-center">
+                    <h4>{{person.name}}</h4>
+                </div>
+               
+            </a>
+            
+        </div> 
+    </div>
+</div>
